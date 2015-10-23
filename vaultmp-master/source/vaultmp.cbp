@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="vaultmp" />
+		<Option platforms="Windows;" />
+		<Option makefile="makefile" />
+		<Option makefile_is_custom="1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<MakeCommands>
+			<Build command="$make -f $makefile $target" />
+			<CompileFile command="$make -f $makefile $file" />
+			<Clean command="$make -f $makefile clean_$target" />
+			<DistClean command="$make -f $makefile distclean$target" />
+			<AskRebuildNeeded command="$make -q -f $makefile $target" />
+			<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+		</MakeCommands>
+		<Build>
+			<Target title="debug">
+				<Option platforms="Windows;" />
+				<Option output="vaultmpd" prefix_auto="1" extension_auto="1" />
+				<Option object_output=".objs/Debug" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-gstabs" />
+					<Add option="-DVAULTMP_DEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-lbfd" />
+					<Add option="-liberty" />
+				</Linker>
+				<MakeCommands>
+					<Build command="$make -f $makefile $target" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean_$target" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="release">
+				<Option platforms="Windows;" />
+				<Option output="vaultmp" prefix_auto="1" extension_auto="1" />
+				<Option object_output=".objs/Release" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+				<MakeCommands>
+					<Build command="$make -f $makefile $target" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean_$target" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-pedantic-errors" />
+			<Add option="-pedantic" />
+			<Add option="-Wfatal-errors" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-Werror -std=gnu++0x" />
+			<Add directory="." />
+			<Add directory="stack_trace/include" />
+		</Compiler>
+		<Linker>
+			<Add option="ufmod.obj" />
+			<Add option="-lshlwapi" />
+			<Add option="-lcomctl32" />
+			<Add option="-lwinmm" />
+			<Add option="-lws2_32" />
+			<Add option="-limagehlp" />
+			<Add option="-static" />
+		</Linker>
+		<Unit filename="API.cpp" />
+		<Unit filename="API.hpp" />
+		<Unit filename="Actor.cpp" />
+		<Unit filename="Actor.hpp" />
+		<Unit filename="Base.cpp" />
+		<Unit filename="Base.hpp" />
+		<Unit filename="Bethesda.cpp" />
+		<Unit filename="Bethesda.hpp" />
+		<Unit filename="Button.cpp" />
+		<Unit filename="Button.hpp" />
+		<Unit filename="Checkbox.cpp" />
+		<Unit filename="Checkbox.hpp" />
+		<Unit filename="Container.cpp" />
+		<Unit filename="Container.hpp" />
+		<Unit filename="CriticalSection.cpp" />
+		<Unit filename="CriticalSection.hpp" />
+		<Unit filename="Data.hpp" />
+		<Unit filename="Debug.cpp" />
+		<Unit filename="Debug.hpp" />
+		<Unit filename="Edit.cpp" />
+		<Unit filename="Edit.hpp" />
+		<Unit filename="Expected.cpp" />
+		<Unit filename="Expected.hpp" />
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.hpp" />
+		<Unit filename="GameFactory.cpp" />
+		<Unit filename="GameFactory.hpp" />
+		<Unit filename="Guarded.cpp" />
+		<Unit filename="Guarded.hpp" />
+		<Unit filename="Interface.cpp" />
+		<Unit filename="Interface.hpp" />
+		<Unit filename="Item.cpp" />
+		<Unit filename="Item.hpp" />
+		<Unit filename="ItemList.cpp" />
+		<Unit filename="ItemList.hpp" />
+		<Unit filename="List.cpp" />
+		<Unit filename="List.hpp" />
+		<Unit filename="ListItem.cpp" />
+		<Unit filename="ListItem.hpp" />
+		<Unit filename="Lockable.cpp" />
+		<Unit filename="Lockable.hpp" />
+		<Unit filename="Network.cpp" />
+		<Unit filename="Network.hpp" />
+		<Unit filename="NetworkClient.cpp" />
+		<Unit filename="NetworkClient.hpp" />
+		<Unit filename="Object.cpp" />
+		<Unit filename="Object.hpp" />
+		<Unit filename="Pipe.cpp" />
+		<Unit filename="Pipe.hpp" />
+		<Unit filename="Player.cpp" />
+		<Unit filename="Player.hpp" />
+		<Unit filename="RadioButton.cpp" />
+		<Unit filename="RadioButton.hpp" />
+		<Unit filename="RakNet.hpp" />
+		<Unit filename="Reference.cpp" />
+		<Unit filename="Reference.hpp" />
+		<Unit filename="ReferenceTypes.hpp" />
+		<Unit filename="ServerEntry.cpp" />
+		<Unit filename="ServerEntry.hpp" />
+		<Unit filename="Shared.cpp" />
+		<Unit filename="Shared.hpp" />
+		<Unit filename="Text.cpp" />
+		<Unit filename="Text.hpp" />
+		<Unit filename="Utils.cpp" />
+		<Unit filename="Utils.hpp" />
+		<Unit filename="Value.cpp" />
+		<Unit filename="Value.hpp" />
+		<Unit filename="VaultException.cpp" />
+		<Unit filename="VaultException.hpp" />
+		<Unit filename="VaultFunctor.cpp" />
+		<Unit filename="VaultFunctor.hpp" />
+		<Unit filename="VaultVector.cpp" />
+		<Unit filename="VaultVector.hpp" />
+		<Unit filename="Window.cpp" />
+		<Unit filename="Window.hpp" />
+		<Unit filename="vaultmp.cpp" />
+		<Unit filename="vaultmp.hpp" />
+		<Unit filename="vaultmp.rc">
+			<Option compilerVar="CPP" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

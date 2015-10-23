@@ -1,0 +1,15 @@
+boost
+RakNet/other
+
+*.depend
+*.layout
+*.a
+*.def
+*.exe
+*.dll
+*.log
+*.workspace
+obj
+.objs
+*.sleepy
+*.cbTemp
